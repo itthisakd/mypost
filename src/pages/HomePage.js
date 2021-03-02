@@ -60,9 +60,13 @@ function HomePage() {
 
         // `}
         >
-          Post App
+          Post Apppppp
         </h1>
-        <a style={{ fontSize: 24 }} onClick={() => history.push("/counter")}>
+        <a
+          href="#"
+          style={{ fontSize: 24 }}
+          onClick={() => history.push("/counter")}
+        >
           Counter
         </a>
         <StyledButton

@@ -6,7 +6,6 @@ import { useEffect } from "react";
 // import styled from "@emotion/styled";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import Button from "../components/Buttons.js";
 
 function SinglePostPage() {
   const [post, setPost] = useState({});
