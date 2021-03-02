@@ -60,7 +60,7 @@ function HomePage() {
 
         // `}
         >
-          Post Apppppp
+          Post App
         </h1>
         <a
           href="#"
