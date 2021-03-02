@@ -1,10 +1,11 @@
 /**@jsxImportSource @emotion/react */
-// import { css } from "@emotion/react";
+import { css } from "@emotion/react";
 import "../App.css";
 import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
 import styled from "@emotion/styled";
 import { useState } from "react";
+import Button from "../components/Buttons.js";
 
 const StyledButton = styled.button`
   color: #ffffff;
@@ -62,13 +63,16 @@ function HomePage() {
         >
           Post App
         </h1>
-        <a
-          href="#"
-          style={{ fontSize: 24 }}
+        <Button
           onClick={() => history.push("/counter")}
+          primary={true}
+          css={css`
+              font-size: 15px;
+              background-color: white;
+          `}
         >
           Counter
-        </a>
+        </Button>
         <StyledButton
           primary={false}
           className="add-post-button button"
