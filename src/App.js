@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AddPost from "./pages/AddPost";
-import SinglePostPage from "./pages/SinglePostPage"
+import SinglePostPage from "./pages/SinglePostPage";
 import CounterPage from "./pages/CounterPage";
 import "./App.css";
 
@@ -14,6 +14,7 @@ function App() {
           <Route path="/home" component={HomePage} />
           <Route path="/addpost" component={AddPost} />
           <Route path="/post/:postID" component={SinglePostPage} />
+          <Route path="/" component={HomePage} />
         </Switch>
       </BrowserRouter>
     </div>

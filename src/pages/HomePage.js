@@ -7,18 +7,19 @@ import styled from "@emotion/styled";
 import { useState } from "react";
 
 const StyledButton = styled.button`
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: ${(props) => (props.primary ? "green" : "red")};
 `;
 
 function HomePage() {
+  const history = useHistory();
   const [posts, setPosts] = useState([]);
   const [isError, setIsError] = useState(null);
-  let history = useHistory();
 
   useEffect(function () {
     async function getPost() {
-      try {// must try and catch because response could fail
+      try {
+        // must try and catch because response could fail
         //use async await because fetching takes unknown amount of time
         let response = await fetch("http://localhost:8000/posts");
         let data = await response.json();
@@ -33,22 +34,20 @@ function HomePage() {
 
   function handleAddPostClick() {
     history.push("/addpost");
-    //history used in conjunction with route to redirect to another page 
+    //history used in conjunction with route to redirect to another page
   }
 
   async function handleDeleteClick(postID) {
     let response = await fetch("http://localhost:8000/posts/" + postID, {
       method: "DELETE",
-
     });
     if (response.ok) {
       let newPosts = posts.filter((post) => {
-        return post.id !== postID
+        return post.id !== postID;
       });
       setPosts(newPosts);
     }
   }
-
 
   return (
     <div>
@@ -63,6 +62,9 @@ function HomePage() {
         >
           Post App
         </h1>
+        <a style={{ fontSize: 24 }} onClick={() => history.push("/counter")}>
+          Counter
+        </a>
         <StyledButton
           primary={false}
           className="add-post-button button"
